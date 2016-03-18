@@ -5,28 +5,19 @@
     <link rel="stylesheet" href="build/css/styles.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
-    <title>Dino</title>
+    <title>Search</title>
   </head>
   <body>
-    <div class="bikeText">
-      <h1>Oh no, someone stole your bike!</h1>
-      <label for="color">Select color(s): </label><br>
-        <input type="checkbox" name="color" value="red">Red <br>
-        <input type="checkbox" name="color" value="blue"> Blue<br>
-        <input type="checkbox" name="color" value="brown"> Brown<br>
-        <input type="checkbox" name="color" value="green"> Green<br>
-        <input type="checkbox" name="color" value="pink"> Pink<br>
-        <input type="checkbox" name="color" value="orange"> Orange<br>
-        <input type="checkbox" name="color" value="purple"> Purple<br>
-        <input type="checkbox" name="color" value="grey"> Grey<br>
-        <input type="checkbox" name="color" value="teal"> Teal<br>
-        <input type="checkbox" name="color" value="white"> White<br>
-        <input type="checkbox" name="color" value="yellow"> Yellow<br>
-      <label for="location">Enter the location: </label>
-      <input id="locationInput" type="text">
+    <div class="searchText">
+      <h1>Search GitHub Repositories</h1>
+      <h3>Enter a GitHub username into the form and submit it to see names and descriptions of that person's public repositories.<br><br>
+      <label for="enterUsername">Enter username: </label><br>
+      <input type="text" name="enterUsername">
       <button id="submitButton">Submit!</button>
     </div>
-    <div class="showResult">
+    <div class="jumbotron">
+      <div class="showResult">
+      </div>
     </div>
   </body>
 </html>
