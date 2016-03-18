@@ -1,23 +1,3 @@
-// // var alarmClock = require('./../js/alarmClock.js').alarmClock;
-// var apiKey = require('./../.env').apiKey;
-//
-//
-// $(document).ready(function() {
-//   $('#submitButton').click(function() {
-//     var colorArray = [];
-//     $(':checkbox:checked').each(function(color){
-//       colorArray[color] = $(this).val();
-//     });
-//     // var color = $('input[name="color"]:checked').val();
-//     var location = $('#locationInput').val();
-//     $('#colorInput').val("");
-//     $('#locationInput').val("");
-//     $.get('https://bikeindex.org/api/v2/bikes_search/count?page=1&colors=' + colorArray + '&proximity=' + location + '&proximity_square=100&access_token=' + apiKey).then(function(response) {
-//       $('.showResult').text('Here are the number of stolen bikes so far in ' + location + ' that are the color ' + colorArray + ': ' + response.stolen);
-//     });
-//   });
-// });
-
 var apiKey = require('./../.env').apiKey;
 exports.getRepos = function(){
   $.get('https://api.github.com/users/daneden?access_token=' + apiKey).then(function(response){
@@ -26,3 +6,14 @@ exports.getRepos = function(){
     console.log(error.responseJSON.message);
   });
 };
+
+$(document).ready(function() {
+  $('#submitButton').click(function() {
+    var userRepo = $('#repoInput').val();
+    $('#repoInput').val("");
+    $.get('https://api.github.com/users/' + userRepo + '?access_token=' + apiKey, function(response) {
+      console.log(response);
+    });
+    console.log("Notice: The GET request has been made.");
+  });
+});
